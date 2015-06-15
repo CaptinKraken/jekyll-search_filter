@@ -4,9 +4,11 @@ module Jekyll
   module DataSearch
     module Filter
 
-      def search(input, property, values)
+      def search(input, property, value)
         return [] if input.nil?
-        return input
+        input.select do |item|
+          item[property.to_s] == value
+        end
       end
 
     end

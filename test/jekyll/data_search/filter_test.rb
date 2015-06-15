@@ -4,7 +4,15 @@ require 'mocha/mini_test'
 
 describe Jekyll::DataSearch::Filter do
   let(:filter) { Object.new.extend(Jekyll::DataSearch::Filter) }
-  let(:data) { [ { 'id' => 1, 'name' => 'John' } ] }
+  let(:people) {[
+    { 'id' => 1, 'name' => 'John' },
+    { 'id' => 2, 'name' => 'Sally' }
+  ]}
+
+  it 'find items matching property and value' do
+    result = filter.search(people, 'name', 'Sally')
+    assert_equal 1, result.length
+  end
 
   it 'handle empty arrays' do
     data = filter.search([], 'name', 'Sally')
