@@ -22,4 +22,4 @@ The property can be of type array. The `search` filter will return items where t
 {% assign result = site.data.news | search:'tags', 'weather', 'sports'}
 ```
 
-See the [tests](https://github.com/cityoffortworth/jekyll-search_filter/blob/master/test/jekyll/search_filter/filter_test.rb) for more details.
+See the [tests](https://github.com/cityoffortworth/jekyll-search_filter/blob/master/test/jekyll/search_filter_test.rb) for more details.
