@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = '0.0.1'
   spec.authors       = ['Greg Scott']
   spec.email         = ['me@gregoryjscott.com']
-  spec.summary       = %q{Liquid filter for searching data.}
+  spec.summary       = %q{Liquid filter for searching Jekyll data.}
   spec.homepage      = 'https://github.com/cityoffortworth/jekyll-data_search'
   spec.license       = 'MIT'
 

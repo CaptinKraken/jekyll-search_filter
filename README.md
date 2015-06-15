@@ -1,6 +1,6 @@
 # jekyll-data_search
 
-Liquid filter for searching data.
+Liquid filter for searching Jekyll data.
 
 ## Usage
 
