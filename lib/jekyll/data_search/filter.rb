@@ -4,14 +4,14 @@ module Jekyll
   module DataSearch
     module Filter
 
-      def search(input, property, value)
+      def search(input, property, *args)
         return [] if input.nil?
         input.select do |item|
           property_value = item[property.to_s]
           if property_value.is_a?(Enumerable)
-            property_value.include?(value)
+            args.any? { |arg| property_value.include?(arg) }
           else
-            property_value == value
+            args.any? { |arg| arg == property_value }
           end
         end
       end
