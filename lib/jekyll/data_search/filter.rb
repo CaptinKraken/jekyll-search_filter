@@ -7,7 +7,12 @@ module Jekyll
       def search(input, property, value)
         return [] if input.nil?
         input.select do |item|
-          item[property.to_s] == value
+          property_value = item[property.to_s]
+          if property_value.is_a?(Enumerable)
+            property_value.include?(value)
+          else
+            property_value == value
+          end
         end
       end
 
