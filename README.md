@@ -1,4 +1,4 @@
-# jekyll-data_search
+# jekyll-search_filter
 
 Liquid filter for searching Jekyll data.
 
@@ -22,4 +22,4 @@ The property can be of type array. The `search` filter will return items where t
 {% assign result = site.data.news | search:'tags', 'weather', 'sports'}
 ```
 
-See the [tests](https://github.com/cityoffortworth/jekyll-data_search/blob/master/test/jekyll/data_search/filter_test.rb) for more details.
+See the [tests](https://github.com/cityoffortworth/jekyll-search_filter/blob/master/test/jekyll/search_filter/filter_test.rb) for more details.

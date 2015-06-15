@@ -1,9 +1,9 @@
-require 'jekyll/data_search'
+require 'jekyll/search_filter'
 require 'minitest/autorun'
 require 'mocha/mini_test'
 
-describe Jekyll::DataSearch::Filter do
-  let(:filter) { Object.new.extend(Jekyll::DataSearch::Filter) }
+describe Jekyll::SearchFilter do
+  let(:filter) { Object.new.extend(Jekyll::SearchFilter) }
   let(:news) {[
     { 'id' => 1, 'title' => 'Title1', 'tags' => ['tag1', 'tag2'] },
     { 'id' => 2, 'title' => 'Title2', 'tags' => ['tag1', 'tag3'] }
@@ -43,12 +43,12 @@ describe Jekyll::DataSearch::Filter do
   end
 
   it 'handle empty arrays' do
-    data = filter.search([], 'name', 'Sally')
-    assert_equal 0, data.length
+    result = filter.search([], 'name', 'Sally')
+    assert_equal 0, result.length
   end
 
   it 'handle nil arrays' do
-    data = filter.search(nil, 'name', 'Sally')
-    assert_equal 0, data.length
+    result = filter.search(nil, 'name', 'Sally')
+    assert_equal 0, result.length
   end
 end
