@@ -8,9 +8,21 @@ module Jekyll
       input.select do |item|
         property_value = item_property(item, property)
         if property_value.is_a?(Enumerable)
-          args.any? { |arg| property_value.include?(arg) }
+          args.any? do |arg|
+            if arg.is_a?(Enumerable)
+              arg.any? { |arg_item| property_value.include?(arg_item) }
+            else
+              property_value.include?(arg)
+            end
+          end
         else
-          args.any? { |arg| arg == property_value }
+          args.any? do |arg|
+            if arg.is_a?(Enumerable)
+              arg.any? { |arg_item| art_item = property_value }
+            else
+              arg == property_value
+            end
+          end
         end
       end
     end

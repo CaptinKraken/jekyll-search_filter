@@ -26,6 +26,12 @@ describe Jekyll::SearchFilter do
       assert_equal 2, result.length
     end
 
+    it 'given property and an array value' do
+      search_value = [1, 2]
+      result = filter.search(news, 'id', search_value)
+      assert_equal 2, result.length
+    end
+
     it 'given array property and one match' do
       result = filter.search(news, 'tags', 'tag2')
       assert_equal 1, result.length
@@ -38,6 +44,12 @@ describe Jekyll::SearchFilter do
 
     it 'given array property and multiple values' do
       result = filter.search(news, 'tags', 'tag2', 'tag3')
+      assert_equal 2, result.length
+    end
+
+    it 'given array property and an array value' do
+      search_value = ['tag2', 'tag3']
+      result = filter.search(news, 'tags', search_value)
       assert_equal 2, result.length
     end
   end

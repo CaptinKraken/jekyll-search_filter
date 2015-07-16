@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 Gem::Specification.new do |spec|
 
   spec.name          = 'jekyll-search_filter'
-  spec.version       = '0.0.2'
+  spec.version       = '0.0.3'
   spec.authors       = ['Greg Scott']
   spec.email         = ['me@gregoryjscott.com']
   spec.summary       = %q{Liquid filter for searching Jekyll data.}
