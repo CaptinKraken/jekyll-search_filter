@@ -40,6 +40,12 @@ describe Jekyll::SearchFilter do
       result = filter.search(news, 'tags', 'tag2', 'tag3')
       assert_equal 2, result.length
     end
+
+    it 'given array property and an array value' do
+      search_value = ['tag2', 'tag3']
+      result = filter.search(news, 'tags', search_value)
+      assert_equal 2, result.length
+    end
   end
 
   it 'handle empty arrays' do
