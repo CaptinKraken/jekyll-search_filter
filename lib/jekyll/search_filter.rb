@@ -16,7 +16,13 @@ module Jekyll
             end
           end
         else
-          args.any? { |arg| arg == property_value }
+          args.any? do |arg|
+            if arg.is_a?(Enumerable)
+              arg.any? { |arg_item| art_item = property_value }
+            else
+              arg == property_value
+            end
+          end
         end
       end
     end
